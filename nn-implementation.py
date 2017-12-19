@@ -29,7 +29,6 @@ for x, nout in zip(X_2_plot, Y_2_plot):
 plt.show()
 
 
-
 # Training parameters
 epochs = 1000
 batch_size = 30
