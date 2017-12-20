@@ -118,10 +118,11 @@ for e in range(epochs + 1):
             # Plot the network output
             for x, nout in zip(X_2_plot,nn_output):
                 c = '#1f77b4'
-                alpha_ = nout[0]
+                alpha_ = (nout[0] - 0.5) * 2
                 if nout[1] > 0.5:
                     c = '#ff7f0e'
-                    alpha_ = nout[1]
+                    alpha_ = (nout[1] - 0.5) * 2
+                    # print(alpha_)
                 plt.scatter(x[0], x[1], color = c, alpha = alpha_)
 
             plt.show()
@@ -137,10 +138,10 @@ nn_output       = softmax(np.dot(hidden_output_2, w_out_hidden) + b_out_hidden)
 
 for x, nout in zip(X_2_plot,nn_output):
     c = '#1f77b4'
-    alpha_ = nout[0]
+    alpha_ = (nout[0] - 0.5) * 2
     if nout[1] > 0.5:
         c = '#ff7f0e'
-        alpha_ = nout[1]
+        alpha_ = (nout[1] - 0.5) * 2
         # print(alpha_)
     plt.scatter(x[0], x[1], color = c, alpha = alpha_)
 

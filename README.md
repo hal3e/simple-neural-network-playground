@@ -5,19 +5,10 @@ The training data type, training parameters and number of perceptron per layer c
 
 The training progress of the network can be seen if the ```plot_output_during_training``` flag is set. Check out the [jupyter notebook](./nn-implementation.ipynb) for more info.
 
-Training data types.
-* Linear
+Training data types: Linear, Circular, Check board
 
-![linear](./resources/linear.png)
+![data_types](./resources/data-types.png)
 
-* Circular
+Sample NN output during training (tanh activation, circular training data):
 
-![circular](./resources/circular.png)
-
-* Check board
-
-![check-board](./resources/checkb.png)
-
-Sample NN output (relu activation, circular training data):
-
-![nn-out](./resources/nn-out.png)
+![nn-out](./resources/nn-out-comb.png)
