@@ -92,12 +92,14 @@ for e in range(epochs + 1):
         b_hidden_1   += (learn_rate / batch_size) * hidden_in_error.sum(axis=0)
 
     # Mean square error loss calculated on the training set
-    if e % (epochs / 10) == 0:
+    if e % (epochs / 4) == 0:
         hidden_output_1 = activation(np.dot(X_test, w_hidden_1) + b_hidden_1)
         hidden_output_2 = activation(np.dot(hidden_output_1, w_hidden_2) + b_hidden_2)
         nn_output       = softmax(np.dot(hidden_output_2, w_out_hidden) + b_out_hidden)
 
-        loss = np.mean((nn_output - Y_test) ** 2)
+        cross_entropy = -np.log(np.multiply(nn_output, Y_test).sum(axis=1))
+        loss = np.mean(cross_entropy)
+
         if last_loss and last_loss < loss:
             print("Train loss: ", loss, "  WARNING - Loss Increasing")
         else:
